@@ -11,14 +11,17 @@ class Grocery extends Component {
     const { id, title, complete, deleteGrocery } = this.props
     return(
       <>
-        <h1>Title: {title}</h1>
-        <p>
+      <div className="cardrow">
+        <div className="cardstyle">
+        <h1 className="htitle">Title: {title}</h1>
+        <p className="cardp">
           { 
             complete ?
             "completed" :
             "active"
           }
         </p>
+        <div className="buttons">
         {
           editing ? 
             <GroceryForm 
@@ -26,9 +29,13 @@ class Grocery extends Component {
               toggleForm={this.toggleForm}
             />
           :
-          <button onClick={() => this.toggleForm()}>Edit</button>
+          
+          <button className="btn" onClick={() => this.toggleForm()}>Edit</button>
         }
-        <button onClick={() => deleteGrocery(id)}>Delete</button>
+        <button className="btn" onClick={() => deleteGrocery(id)}>Delete</button>
+        </div>
+        </div>
+        </div>
       </>
     )
   }

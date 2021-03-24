@@ -1,5 +1,6 @@
 body {
-  margin: 0;
+  background-color: rgb(54, 61, 59);
+  margin: 10px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +11,90 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.cardrow {
+  
+  width: 30%;
+  margin: 10px;
+  background-color: rgb(99, 141, 127);
+  border: 1px solid white;
+  border-radius: 10px;
+  
+}
+
+.cardstyle {
+  width: 100%;
+  
+  
+}
+
+.htitle {
+  padding-left: 20px;
+  border-bottom: 1px solid black;
+  
+  color: rgb(209, 255, 245);
+}
+
+.cardp {
+  display: flex;
+  justify-content: center;
+  color: black;
+}
+
+.buttons {
+  
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+}
+
+.btn {
+padding: 10px 20px;
+border-radius: 5px;
+background-color: rgb(145, 142, 137);
+border: 1px solid black;
+
+
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: cadetblue;
+}
+
+
+form {
+  margin-top: 100px;
+  width: 245px;
+}
+.list {
+  margin-bottom: 100px;
+  
+  
+}
+.listinput {
+ 
+  font-size: 1.2em;
+  border: 2px solid black;
+  
+  margin-left: 5px;
+}
+p {
+  color: aliceblue;
+  text-align: center;
+}
+
+.sbtn {
+  margin-top: 10px;
+  border: 2px solid coral;
+  border-radius: 5px;
+  padding: 10px 15px;
+  
+}
+.sbtn:hover {
+  background-color: coral;
+  cursor: pointer;
+  border: 2px solid white;
 }

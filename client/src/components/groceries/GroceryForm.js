@@ -28,8 +28,9 @@ class GroceryForm extends Component {
   render() {
     const { title } = this.state
     return(
-      <form onSubmit={this.handleSubmit}>
-        <input 
+      <form className="list" onSubmit={this.handleSubmit}>
+        <p>New</p>
+        <input className="listinput"
           type="text"
           name="title"
           value={title} 
@@ -37,7 +38,7 @@ class GroceryForm extends Component {
           required
           placeholder="Title"
         />
-        <button type="submit">Submit</button>
+        <button className="sbtn" type="submit">Submit</button>
       </form>
     )
   }
