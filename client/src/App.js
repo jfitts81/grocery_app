@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import GroceryForm from './components/groceries/GroceryForm';
 import GroceryList from './components/groceries/GroceryList';
+import Navbar from './components/groceries/Navbar';
 import axios from 'axios';
 class App extends Component {
   state = { grocerys: [] }
@@ -18,7 +19,7 @@ class App extends Component {
     axios.post('/api/grocerys', { grocery })
       .then( res => {
       
-        const { grocerys } = this.state 
+        const { grocerys, complete } = this.state 
         this.setState({ grocerys: [ ...grocerys, res.data ] })
       })
       .catch( err => console.log(err))
@@ -63,14 +64,28 @@ class App extends Component {
       })
     })
   }
+  visibleItems = () => {
+    const { grocerys, filter } = this.state 
+    switch(filter) {
+      case 'Active':
+        return grocerys.filter( t => !t.complete)
+      case 'Completed':
+        return grocerys.filter( t => t.complete)
+      default:
+        return grocerys
+    }
+  }
   render() {
-    const { grocerys } = this.state
+    const { grocerys, filter } = this.state
     return (
       <>
+        <Navbar filter={filter} setFilter={this.setFilter}/>
         <h1>Grocery List</h1>
         <GroceryForm addGrocery={this.addGrocery} />
         <GroceryList 
-          grocerys={grocerys} 
+          grocerys={this.visibleItems()} updateComplete={this.updateComplete}
+
+          // grocerys={grocerys} 
           deleteGrocery={this.deleteGrocery}
           updateGrocery={this.updateGrocery}
         />
