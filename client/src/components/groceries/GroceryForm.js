@@ -17,6 +17,7 @@ class GroceryForm extends Component {
     if (this.props.id) {
       const { updateGrocery, id, toggleForm } = this.props 
       updateGrocery(id, this.state)
+      this.setState({ title: "", complete: false })
       toggleForm()
     } else {
      

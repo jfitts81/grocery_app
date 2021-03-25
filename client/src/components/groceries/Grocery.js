@@ -8,20 +8,18 @@ class Grocery extends Component {
   }
   render() {
     const { editing } = this.state
-    const { id, title, price, complete, desc, deleteGrocery } = this.props
+    const { id, title, price, complete, desc, deleteGrocery, updateComplete } = this.props
     return(
       <>
+       
       <div className="cardrow">
         <div className="cardstyle">
         <h1 className="htitle">Title: {title}</h1>
         <h3 className="htitle">Price: {price}</h3>
         <h3 className="htitle">Description: {desc}</h3>
-        <p className="cardp">
-          { 
-            complete ?
-            "completed" :
-            "active"
-          }
+        <p className="cardp" style={ complete ? {...styles.complete } : null }
+          onClick={() => updateComplete(id)}>
+          Check off Item
         </p>
         <div className="buttons">
         {
@@ -40,6 +38,13 @@ class Grocery extends Component {
         </div>
       </>
     )
+      
+    }
   }
+  const styles = {
+    complete: {
+      color: 'grey',
+      textDecoration: 'line-through'
+    }
 }
 export default Grocery;
