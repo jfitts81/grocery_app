@@ -8,12 +8,14 @@ class Grocery extends Component {
   }
   render() {
     const { editing } = this.state
-    const { id, title, complete, deleteGrocery } = this.props
+    const { id, title, price, complete, desc, deleteGrocery } = this.props
     return(
       <>
       <div className="cardrow">
         <div className="cardstyle">
         <h1 className="htitle">Title: {title}</h1>
+        <h3 className="htitle">Price: {price}</h3>
+        <h3 className="htitle">Description: {desc}</h3>
         <p className="cardp">
           { 
             complete ?

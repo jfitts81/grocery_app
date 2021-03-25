@@ -49,6 +49,20 @@ class App extends Component {
       })
       .catch( err => console.log(err))
   }
+  updateComplete = (id) => {
+    const { grocerys } = this.state
+    this.setState({
+      grocerys: grocerys.map( t => {
+        if (t.id === id) {
+          return {
+            ...t, 
+            complete: !t.complete
+          }
+        }
+        return t
+      })
+    })
+  }
   render() {
     const { grocerys } = this.state
     return (

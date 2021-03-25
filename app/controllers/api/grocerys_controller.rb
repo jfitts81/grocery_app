@@ -28,6 +28,6 @@ class Api::GrocerysController < ApplicationController
         end
         private 
           def grocery_params
-            params.require(:grocery).permit(:title, :complete)
+            params.require(:grocery).permit(:title, :price, :desc, :complete)
           end
       end

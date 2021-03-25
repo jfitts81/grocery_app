@@ -3,8 +3,8 @@ class GroceryForm extends Component {
   state = { title: "", complete: false }
   componentDidMount() {
     if (this.props.id) {
-      const { id, title, complete } = this.props 
-      this.setState({ id, title, complete})
+      const { id, title, price, complete } = this.props 
+      this.setState({ id, title, price, complete})
     }
   }
   
@@ -23,10 +23,10 @@ class GroceryForm extends Component {
       this.props.addGrocery(this.state)
     }
 
-    this.setState({ title: "", complete: false })
+    this.setState({ title: "", price: "", complete: false })
   }
   render() {
-    const { title } = this.state
+    const { title, price, desc } = this.state
     return(
       <form className="list" onSubmit={this.handleSubmit}>
         <p>New</p>
@@ -37,6 +37,22 @@ class GroceryForm extends Component {
           onChange={this.handleChange} 
           required
           placeholder="Title"
+        />
+        <input className="listinput"
+          type="text"
+          name="price"
+          value={price} 
+          onChange={this.handleChange} 
+          required
+          placeholder="Price"
+        />
+           <input className="listinput"
+          type="body"
+          name="desc"
+          value={desc} 
+          onChange={this.handleChange} 
+          required
+          placeholder="Description"
         />
         <button className="sbtn" type="submit">Submit</button>
       </form>
