@@ -24,7 +24,7 @@ class GroceryForm extends Component {
       this.props.addGrocery(this.state)
     }
 
-    this.setState({ title: "", price: "", complete: false })
+    this.setState({ title: "", price: "", desc: "", complete: false })
   }
   render() {
     const { title, price, desc } = this.state

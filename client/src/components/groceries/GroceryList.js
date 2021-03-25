@@ -1,5 +1,5 @@
 import Grocery from './Grocery';
-const GroceryList = ({ grocerys, deleteGrocery, updateGrocery }) => {
+const GroceryList = ({ grocerys, deleteGrocery, updateGrocery, updateComplete }) => {
   return(
     <>  
       { grocerys.map( t => 
@@ -9,6 +9,7 @@ const GroceryList = ({ grocerys, deleteGrocery, updateGrocery }) => {
           {...t}
           deleteGrocery={deleteGrocery}
           updateGrocery={updateGrocery}
+          updateComplete={updateComplete}
         />
       )}
     </>
