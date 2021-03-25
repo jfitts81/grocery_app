@@ -19,7 +19,8 @@ const Navbar = ({ filter, setFilter}) => {
   return (
     <div className="nav">
       {
-        [].map( f => filterLink(filter, f, setFilter))
+        ['All', 'Active', 'Completed'].map( f => filterLink(filter, f, setFilter))
+        
       }
     </div>
   )

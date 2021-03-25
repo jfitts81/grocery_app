@@ -43,7 +43,7 @@ class Grocery extends Component {
   }
   const styles = {
     complete: {
-      color: 'grey',
+      color: 'dimgrey',
       textDecoration: 'line-through'
     }
 }

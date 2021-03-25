@@ -4,6 +4,7 @@ import GroceryList from './components/groceries/GroceryList';
 import Navbar from './components/groceries/Navbar';
 import axios from 'axios';
 class App extends Component {
+  setFilter = (filter) => this.setState({ filter })
   state = { grocerys: [] }
   componentDidMount() {
 
